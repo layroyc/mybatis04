@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!--xml 有  2大作用，	第一个spring的xml    放对象的容器，这个是mybaties的xml  他是连接数据库的-->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/sifa09mybatis?serverTimezone=UTC"/>
+				<property name="username" value="root"/>
+				<property name="password" value="1234567"/>
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/hp/dao/PersonDao.xml"></mapper>
+		<mapper resource="com/hp/dao/HumanDAO.xml"></mapper>
+	</mappers>
+</configuration>
+
